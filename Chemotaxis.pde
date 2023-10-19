@@ -1,7 +1,7 @@
 Fart [] bobs;
 void setup(){
   size(500,500);
-  bobs = new Fart[3000];
+  bobs = new Fart[1500];
   for(int i = 0; i < bobs.length; i++)
     bobs[i] = new Fart();
 }
@@ -14,6 +14,7 @@ void draw(){
 }
 class Fart{
   int myX, myY;
+  int myColor = color(79,((int)(Math.random()*256)+118),((int)(Math.random()*95)));
   Fart(){
     myX = myY = 250;
   }
@@ -24,7 +25,7 @@ class Fart{
   void show(){
     strokeWeight(0.1);
     stroke(36,31,82);
-    fill(79,((int)(Math.random()*256)+118),((int)(Math.random()*95)));
+    fill(myColor);
     ellipse(myX, myY, 10,10);
     if(mouseX > myX)
     myX = myX + (int)(Math.random()*5)+2;
